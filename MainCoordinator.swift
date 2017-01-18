@@ -39,3 +39,15 @@ class ItemsTVC: UIViewController {
     
     let db = DisposeBag()
 }
+
+
+class NewItemCoordinator: Coordinator {
+    let newItemVC = NewItemVC()
+    override func loadViewController() {
+        viewController = newItemVC
+    }
+}
+
+class NewItemVC: UIViewController {
+    let stackView = UIStackView()
+}

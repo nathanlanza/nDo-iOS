@@ -30,7 +30,7 @@ EXTERNAL SOURCES:
     :path: "~/Documents/Reuse"
 
 SPEC CHECKSUMS:
-  CoordinatorKit: 3c95523472a2b2772212cafceff10718a1ac21de
+  CoordinatorKit: c4566ceba2063a5a3f2b861eb2646787f5ab5dd9
   CustomIOSAlertView: cc4fa8e36219be3fd5ebcd40789f5b4aaae0f38e
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   Realm: d95b8fb34c83f1e764b66d319277a62c2b6e4bf5
