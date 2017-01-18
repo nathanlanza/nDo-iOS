@@ -14,17 +14,10 @@ class ItemsTVC: UIViewController {
     
     var items: Results<Item>! {
         didSet {
-            let a = Array(items)
-            Observable.of(a)
-                .bindTo(tableView.rx.items(cellIdentifier: UITableViewCell.reuseIdentifier, cellType: UITableViewCell.self)) { index, value, cell in
-                    cell.textLabel?.text = value.detail
-                }.addDisposableTo(db)
-            
-            tableView.rx.modelSelected(Item.self).subscribe(onNext: { item in
-                self.delegate.itemsTVC(self, didSelectItem: item)
-            }).addDisposableTo(db)
+            variable.value = Array(items)
         }
     }
+    let variable = Variable([Item]())
     
     let tableView = UITableView()
     override func loadView() {
@@ -42,6 +35,13 @@ class ItemsTVC: UIViewController {
         super.viewDidLoad()
         
         tableView.register(UITableViewCell.self)
+        variable.asObservable().bindTo(tableView.rx.items(cellIdentifier: UITableViewCell.reuseIdentifier, cellType: UITableViewCell.self)) { index, value, cell in
+                cell.textLabel?.text = value.detail
+            }.addDisposableTo(db)
+        
+        tableView.rx.modelSelected(Item.self).subscribe(onNext: { item in
+            self.delegate.itemsTVC(self, didSelectItem: item)
+        }).addDisposableTo(db)
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "New", style: .plain, target: nil, action: nil)
         navigationItem.rightBarButtonItem?.rx.tap.subscribe(onNext: {

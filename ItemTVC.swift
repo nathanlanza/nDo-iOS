@@ -6,7 +6,7 @@ class ItemVC: UIViewController {
     
     var item: Item! {
         didSet {
-            detailTextField.text = item.detail
+            detailTextField.text = "test"
             firstStepTextField.text = item.firstStep
             finishedConditionTextField.text = item.finishedCondition
         }
@@ -19,6 +19,9 @@ class ItemVC: UIViewController {
     let finishedConditionTextField = UITextField()
     
     func setupViews() {
+        view.addSubview(stackView)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        
         [detailTextField,firstStepTextField,finishedConditionTextField].forEach {
             stackView.addArrangedSubview($0)
         }
@@ -33,6 +36,7 @@ class ItemVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         
         setupViews()
         setupRx()
@@ -40,13 +44,19 @@ class ItemVC: UIViewController {
     
     func setupRx() {
         detailTextField.rx.controlEvent(.editingDidEnd).subscribe(onNext: {
-            self.item.detail = self.detailTextField.text ?? ""
+            RLM.write {
+                self.item.detail = self.detailTextField.text ?? ""
+            }
         }).addDisposableTo(db)
         firstStepTextField.rx.controlEvent(.editingDidEnd).subscribe(onNext: {
-            self.item.firstStep = self.firstStepTextField.text ?? ""
+            RLM.write {
+                self.item.firstStep = self.firstStepTextField.text ?? ""
+            }
         }).addDisposableTo(db)
         finishedConditionTextField.rx.controlEvent(.editingDidEnd).subscribe(onNext: {
-            self.item.finishedCondition = self.finishedConditionTextField.text ?? ""
+            RLM.write {
+                self.item.finishedCondition = self.finishedConditionTextField.text ?? ""
+            }
         }).addDisposableTo(db)
     }
     let db = DisposeBag()
