@@ -1,6 +1,6 @@
 import RealmSwift
 
-struct Realm {
+struct RLM {
     fileprivate static let main = try! RealmSwift.Realm()
     static func write(closure: (Void) -> Void) {
         try! main.write(closure)

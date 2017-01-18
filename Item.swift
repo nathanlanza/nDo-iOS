@@ -15,8 +15,8 @@ class Item: Object {
     
     static func create() -> Item {
         let item = Item()
-        Realm.write {
-            Realm.add(item)
+        RLM.write {
+            RLM.add(item)
         }
         return item
     }
