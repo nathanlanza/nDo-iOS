@@ -17,8 +17,12 @@ class MainCoordinator: TabBarCoordinator {
         let cc = CaptureCoordinator()
         let ccNav = NavigationCoordinator(rootCoordinator: cc)
         
-        coordinators = [icNav, ccNav]
+        coordinators = [icNav]
+        
+        addButton(for: ccNav, at: 1)
     }
+    
+    
 }
 
 class CaptureCoordinator: Coordinator {
@@ -30,7 +34,13 @@ class CaptureCoordinator: Coordinator {
 
 
 class CaptureVC: UIViewController {
-    
+   
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .white
+        
+        
+    }
 }
 
 
