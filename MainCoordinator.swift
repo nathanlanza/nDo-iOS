@@ -25,7 +25,8 @@ class ItemsCoordinator: Coordinator {
 
 extension ItemsCoordinator: ItemsTVCDelegate {
     func itemsTVC(_ itemsTVC: ItemsTVC, didSelectItem item: Item) {
-        let nic = NewItemCoordinator()
+        let iic = ItemCoordinator()
+        iic.item = item
         show(nic, sender: self)
     }
 }
@@ -60,26 +61,39 @@ protocol ItemsTVCDelegate: class {
 }
 
 
-class NewItemCoordinator: Coordinator {
+class ItemCoordinator: Coordinator {
+    
+    let item: Item
+    
+    init(item: Item? = nil) {
+        self.item = item ?? Item()
+        super.init()
+    }
 
-    let newItemVC = NewItemVC()
+    let itemVC = ItemVC()
     override func loadViewController() {
-        viewController = newItemVC
+        viewController = itemVC
+        itemVC.item = item
     }
 }
 
-class NewItemVC: UIViewController {
+class ItemVC: UIViewController {
+    
+    var item: Item! {
+        didSet {
+            detailTextField.text = item.detail
+            firstStepTextField.text = item.firstStep
+            finishedConditionTextField.text = item.finishedCondition
+        }
+    }
+    
     let stackView = UIStackView(axis: .vertical, spacing: 8, distribution: .fillEqually)
     
     let detailTextField = UITextField()
     let firstStepTextField = UITextField()
     let finishedConditionTextField = UITextField()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        view.addSubview(stackView)
-        stackView.translatesAutoresizingMaskIntoConstraints = false
+    func setupViews() {
         [detailTextField,firstStepTextField,finishedConditionTextField].forEach {
             stackView.addArrangedSubview($0)
         }
@@ -91,4 +105,24 @@ class NewItemVC: UIViewController {
             stackView.rightAnchor.constraint(equalTo: view.rightAnchor)
             ])
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    
+        setupViews()
+        setupRx()
+    }
+    
+    func setupRx() {
+        detailTextField.rx.controlEvent(.editingDidEnd).subscribe(onNext: {
+            self.item.detail = self.detailTextField.text ?? ""
+        })
+        firstStepTextField.rx.controlEvent(.editingDidEnd).subscribe(onNext: {
+            self.item.firstStep = self.firstStepTextField.text ?? ""
+        })
+        finishedConditionTextField.rx.controlEvent(.editingDidEnd).subscribe(onNext: {
+            self.item.finishedCondition = self.finishedConditionTextField.text ?? ""
+        })
+    }
+    let db = DisposeBag()
 }
