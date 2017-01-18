@@ -6,17 +6,17 @@ class ItemVC: UIViewController {
     
     var item: Item! {
         didSet {
-            detailTextField.text = item.detail
-            firstStepTextField.text = item.firstStep
-            finishedConditionTextField.text = item.finishedCondition
+            detailTextField.placeholder = item.detail
+            firstStepTextField.placeholder = item.firstStep
+            finishedConditionTextField.placeholder = item.finishedCondition
         }
     }
     
     let stackView = UIStackView(axis: .vertical, spacing: 8, distribution: .fillEqually)
     
-    let detailTextField = UITextField()
-    let firstStepTextField = UITextField()
-    let finishedConditionTextField = UITextField()
+    let detailTextField = ItemPropertyTextField.create()
+    let firstStepTextField = ItemPropertyTextField.create()
+    let finishedConditionTextField = ItemPropertyTextField.create()
     
     func setupViews() {
         view.addSubview(stackView)
@@ -28,7 +28,7 @@ class ItemVC: UIViewController {
         
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor),
-            stackView.bottomAnchor.constraint(equalTo: bottomLayoutGuide.topAnchor),
+            stackView.bottomAnchor.constraint(equalTo: bottomLayoutGuide.topAnchor, constant: -260),
             stackView.leftAnchor.constraint(equalTo: view.leftAnchor),
             stackView.rightAnchor.constraint(equalTo: view.rightAnchor)
             ])

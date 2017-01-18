@@ -316,6 +316,8 @@
 		B1C6F365BD57B3A7451714D5243DC143 /* RealmSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B551989124F21F0EA0B106A4D4418210 /* RealmSwift-dummy.m */; };
 		B1C82D259700465AD39D04E3A279BECF /* Just.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7807039E74A9694F5636840AA49A5ADF /* Just.swift */; };
 		B230A1C728F51087C1A0D21256BB4CFD /* Observable+Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECEE8B35AE1E88041618DF8E101A789 /* Observable+Binding.swift */; };
+		B30E40F21E2F4FFB00C133E2 /* KeyboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E40F01E2F4FF400C133E2 /* KeyboardHandler.swift */; };
+		B30E40F61E2F50E500C133E2 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E40F51E2F50E500C133E2 /* UIView+Extension.swift */; };
 		B347B712B64FFE6F4181B117CAA4D78E /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C01514930ABEC4C23B57F2A1B174002 /* Util.swift */; };
 		B3B79DCB3F6DD708685A1A8A57ABCE8D /* RefCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE2C889EA31497A6F067B8217269EEF /* RefCount.swift */; };
 		B3BC28731D9885839B14D0CCE151DAFD /* Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = D519EB86FBE9F8050A76AC578550B778 /* Realm.swift */; };
@@ -921,6 +923,8 @@
 		B0CC3463A4726A5470BABA4FB3C1A9FC /* Observable+Single.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Observable+Single.swift"; path = "RxSwift/Observables/Observable+Single.swift"; sourceTree = "<group>"; };
 		B0E621F1EBA4CE66AF3F5B881E6A829C /* ObservableType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ObservableType.swift; path = RxSwift/ObservableType.swift; sourceTree = "<group>"; };
 		B16EA365F360E740746B2DFB8BF427AD /* Window.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Window.swift; path = RxSwift/Observables/Implementations/Window.swift; sourceTree = "<group>"; };
+		B30E40F01E2F4FF400C133E2 /* KeyboardHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardHandler.swift; sourceTree = "<group>"; };
+		B30E40F51E2F50E500C133E2 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		B33AD0F7A8E3061958B7A69737FD943F /* Sample.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Sample.swift; path = RxSwift/Observables/Implementations/Sample.swift; sourceTree = "<group>"; };
 		B39F3917FA8996614ED421C030927E17 /* Optional.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Optional.swift; path = RealmSwift/Optional.swift; sourceTree = "<group>"; };
 		B53AC8473F5B38825F4F3D5E5A5450FA /* SubjectType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SubjectType.swift; path = RxSwift/Subjects/SubjectType.swift; sourceTree = "<group>"; };
@@ -1188,6 +1192,8 @@
 			children = (
 				3E4FC5827345C497633A0D34CF478A8E /* ReusableView.swift */,
 				C3829E0CDEBF8727D37FDBFC0DA90A94 /* UIStackView+Extension.swift */,
+				B30E40F01E2F4FF400C133E2 /* KeyboardHandler.swift */,
+				B30E40F51E2F50E500C133E2 /* UIView+Extension.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -2552,6 +2558,8 @@
 				EA9822186A17FA3671D18D4D54470091 /* ReusableView.swift in Sources */,
 				B5DC54F7EC141E55598BC0D57A5CE621 /* Reuse-dummy.m in Sources */,
 				886FEFFF75C0CE6F54D34433F45149C2 /* UIStackView+Extension.swift in Sources */,
+				B30E40F61E2F50E500C133E2 /* UIView+Extension.swift in Sources */,
+				B30E40F21E2F4FFB00C133E2 /* KeyboardHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

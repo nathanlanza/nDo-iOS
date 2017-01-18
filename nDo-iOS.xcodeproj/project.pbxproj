@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		436117C164E876BFFDB2E045 /* Pods_nDo_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91B5EBCF9F456EA8597FA37A /* Pods_nDo_iOS.framework */; };
+		B30E40F41E2F509400C133E2 /* ItemStringTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E40F31E2F509400C133E2 /* ItemStringTextField.swift */; };
 		B330A6341E2F2DDB0041672A /* RLM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B330A6331E2F2DDB0041672A /* RLM.swift */; };
 		B33424F11E2F135700793CFC /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33424F01E2F135700793CFC /* MainCoordinator.swift */; };
 		B337E6B91E2ECE18000ED519 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B337E6B81E2ECE18000ED519 /* AppDelegate.swift */; };
@@ -17,12 +18,13 @@
 		B3EF6D151E2F3F9300EE961E /* ItemsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EF6D141E2F3F9300EE961E /* ItemsCoordinator.swift */; };
 		B3EF6D171E2F3F9900EE961E /* ItemsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EF6D161E2F3F9900EE961E /* ItemsTVC.swift */; };
 		B3EF6D191E2F3F9F00EE961E /* ItemCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EF6D181E2F3F9F00EE961E /* ItemCoordinator.swift */; };
-		B3EF6D1B1E2F401100EE961E /* ItemTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EF6D1A1E2F401100EE961E /* ItemTVC.swift */; };
+		B3EF6D1B1E2F401100EE961E /* ItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EF6D1A1E2F401100EE961E /* ItemVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5AAE119F8828845EA6C1C8BD /* Pods-nDo-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nDo-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nDo-iOS/Pods-nDo-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		91B5EBCF9F456EA8597FA37A /* Pods_nDo_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nDo_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B30E40F31E2F509400C133E2 /* ItemStringTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemStringTextField.swift; sourceTree = "<group>"; };
 		B330A6331E2F2DDB0041672A /* RLM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RLM.swift; sourceTree = "<group>"; };
 		B33424F01E2F135700793CFC /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		B337E6B51E2ECE18000ED519 /* nDo-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "nDo-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -34,7 +36,7 @@
 		B3EF6D141E2F3F9300EE961E /* ItemsCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsCoordinator.swift; sourceTree = "<group>"; };
 		B3EF6D161E2F3F9900EE961E /* ItemsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsTVC.swift; sourceTree = "<group>"; };
 		B3EF6D181E2F3F9F00EE961E /* ItemCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCoordinator.swift; sourceTree = "<group>"; };
-		B3EF6D1A1E2F401100EE961E /* ItemTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTVC.swift; sourceTree = "<group>"; };
+		B3EF6D1A1E2F401100EE961E /* ItemVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemVC.swift; sourceTree = "<group>"; };
 		C1E6F59A33910D78237E7C53 /* Pods-nDo-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nDo-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-nDo-iOS/Pods-nDo-iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,7 +71,8 @@
 				B3EF6D181E2F3F9F00EE961E /* ItemCoordinator.swift */,
 				B330A6331E2F2DDB0041672A /* RLM.swift */,
 				B33424F01E2F135700793CFC /* MainCoordinator.swift */,
-				B3EF6D1A1E2F401100EE961E /* ItemTVC.swift */,
+				B3EF6D1A1E2F401100EE961E /* ItemVC.swift */,
+				B30E40F31E2F509400C133E2 /* ItemStringTextField.swift */,
 				B337E6B71E2ECE18000ED519 /* other */,
 				B337E6B61E2ECE18000ED519 /* Products */,
 				A546A709D0237D86D0B8C39C /* Pods */,
@@ -231,10 +234,11 @@
 				B33424F11E2F135700793CFC /* MainCoordinator.swift in Sources */,
 				B3EF6D191E2F3F9F00EE961E /* ItemCoordinator.swift in Sources */,
 				B3EF6D171E2F3F9900EE961E /* ItemsTVC.swift in Sources */,
-				B3EF6D1B1E2F401100EE961E /* ItemTVC.swift in Sources */,
+				B3EF6D1B1E2F401100EE961E /* ItemVC.swift in Sources */,
 				B337E6B91E2ECE18000ED519 /* AppDelegate.swift in Sources */,
 				B330A6341E2F2DDB0041672A /* RLM.swift in Sources */,
 				B3EF6D151E2F3F9300EE961E /* ItemsCoordinator.swift in Sources */,
+				B30E40F41E2F509400C133E2 /* ItemStringTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
