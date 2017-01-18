@@ -1,0 +1,44 @@
+PODS:
+  - CoordinatorKit (0.0.5)
+  - CustomIOSAlertView (0.9.5)
+  - DZNEmptyDataSet (1.8.1)
+  - Realm (2.2.0):
+    - Realm/Headers (= 2.2.0)
+  - Realm/Headers (2.2.0)
+  - RealmSwift (2.2.0):
+    - Realm (= 2.2.0)
+  - Reuse (0.1.0)
+  - RxCocoa (3.0.0):
+    - RxSwift (~> 3.0)
+  - RxSwift (3.0.0)
+
+DEPENDENCIES:
+  - CoordinatorKit (from `~/Documents/CoordinatorKit`)
+  - CustomIOSAlertView (~> 0.9.5)
+  - DZNEmptyDataSet
+  - RealmSwift
+  - Reuse (from `~/Documents/Reuse`)
+  - RxCocoa (= 3.0)
+  - RxSwift (= 3.0)
+
+EXTERNAL SOURCES:
+  CoordinatorKit:
+    :branch: master
+    :path: "~/Documents/CoordinatorKit"
+  Reuse:
+    :branch: master
+    :path: "~/Documents/Reuse"
+
+SPEC CHECKSUMS:
+  CoordinatorKit: 3c95523472a2b2772212cafceff10718a1ac21de
+  CustomIOSAlertView: cc4fa8e36219be3fd5ebcd40789f5b4aaae0f38e
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
+  Realm: d95b8fb34c83f1e764b66d319277a62c2b6e4bf5
+  RealmSwift: a4fa52d06e946a32ec746b3388374f742e6b8731
+  Reuse: eb019bebe532a47713af73be3c369c36c53e7ed8
+  RxCocoa: 0a2f3ae381cf16f4021a4cee7a4420f83058a965
+  RxSwift: a930cd662f5b4a7ca9dc3518585dba91dadf497c
+
+PODFILE CHECKSUM: 1d20c8632c0e3cc686ed8f8f3c1b97a66e34246e
+
+COCOAPODS: 1.1.1
