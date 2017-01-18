@@ -25,9 +25,8 @@ class ItemsCoordinator: Coordinator {
 
 extension ItemsCoordinator: ItemsTVCDelegate {
     func itemsTVC(_ itemsTVC: ItemsTVC, didSelectItem item: Item) {
-        let iic = ItemCoordinator()
-        iic.item = item
-        show(nic, sender: self)
+        let iic = ItemCoordinator(item: item)
+        show(iic, sender: self)
     }
 }
 
@@ -116,13 +115,13 @@ class ItemVC: UIViewController {
     func setupRx() {
         detailTextField.rx.controlEvent(.editingDidEnd).subscribe(onNext: {
             self.item.detail = self.detailTextField.text ?? ""
-        })
+        }).addDisposableTo(db)
         firstStepTextField.rx.controlEvent(.editingDidEnd).subscribe(onNext: {
             self.item.firstStep = self.firstStepTextField.text ?? ""
-        })
+        }).addDisposableTo(db)
         finishedConditionTextField.rx.controlEvent(.editingDidEnd).subscribe(onNext: {
             self.item.finishedCondition = self.finishedConditionTextField.text ?? ""
-        })
+        }).addDisposableTo(db)
     }
     let db = DisposeBag()
 }
