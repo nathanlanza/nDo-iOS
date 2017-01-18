@@ -11,5 +11,7 @@ struct RLM {
     static func objects<T: Object>(_ type: T.Type) -> Results<T> {
         return main.objects(type)
     }
-    
+    static func delete(_ object: Object) {
+        main.delete(object)
+    }
 }

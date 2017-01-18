@@ -15,9 +15,19 @@ class Item: Object {
     
     static func create() -> Item {
         let item = Item()
+        
+        item.detail = "Insert detail here"
+        item.firstStep = "Insert first step here"
+        item.finishedCondition = "Insert finished condition here"
+        
         RLM.write {
             RLM.add(item)
         }
         return item
+    }
+    func delete() {
+        RLM.write {
+            RLM.delete(self)
+        }
     }
 }

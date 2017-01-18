@@ -43,6 +43,11 @@ class ItemsTVC: UIViewController {
             self.delegate.itemsTVC(self, didSelectItem: item)
         }).addDisposableTo(db)
         
+        tableView.rx.itemDeleted.subscribe(onNext: { indexPath in
+            let removed = self.variable.value.remove(at: indexPath.row)
+            removed.delete()
+        }).addDisposableTo(db)
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "New", style: .plain, target: nil, action: nil)
         navigationItem.rightBarButtonItem?.rx.tap.subscribe(onNext: {
             self.delegate.newItemTapped(for: self)

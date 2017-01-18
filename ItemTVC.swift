@@ -6,7 +6,7 @@ class ItemVC: UIViewController {
     
     var item: Item! {
         didSet {
-            detailTextField.text = "test"
+            detailTextField.text = item.detail
             firstStepTextField.text = item.firstStep
             finishedConditionTextField.text = item.finishedCondition
         }
