@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		436117C164E876BFFDB2E045 /* Pods_nDo_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91B5EBCF9F456EA8597FA37A /* Pods_nDo_iOS.framework */; };
+		B303146A1E30471500E13EBE /* CapturedNotesTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30314691E30471500E13EBE /* CapturedNotesTVC.swift */; };
+		B303146C1E30474C00E13EBE /* CapturedNotesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B303146B1E30474C00E13EBE /* CapturedNotesCoordinator.swift */; };
+		B30314721E3047AC00E13EBE /* CaptureCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30314711E3047AC00E13EBE /* CaptureCoordinator.swift */; };
+		B30314741E3047E500E13EBE /* CaptureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30314731E3047E500E13EBE /* CaptureVC.swift */; };
 		B30E40F41E2F509400C133E2 /* ItemStringTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E40F31E2F509400C133E2 /* ItemStringTextField.swift */; };
 		B330A6341E2F2DDB0041672A /* RLM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B330A6331E2F2DDB0041672A /* RLM.swift */; };
 		B33424F11E2F135700793CFC /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33424F01E2F135700793CFC /* MainCoordinator.swift */; };
@@ -24,6 +28,10 @@
 /* Begin PBXFileReference section */
 		5AAE119F8828845EA6C1C8BD /* Pods-nDo-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nDo-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nDo-iOS/Pods-nDo-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		91B5EBCF9F456EA8597FA37A /* Pods_nDo_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nDo_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B30314691E30471500E13EBE /* CapturedNotesTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapturedNotesTVC.swift; sourceTree = "<group>"; };
+		B303146B1E30474C00E13EBE /* CapturedNotesCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapturedNotesCoordinator.swift; sourceTree = "<group>"; };
+		B30314711E3047AC00E13EBE /* CaptureCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureCoordinator.swift; sourceTree = "<group>"; };
+		B30314731E3047E500E13EBE /* CaptureVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureVC.swift; sourceTree = "<group>"; };
 		B30E40F31E2F509400C133E2 /* ItemStringTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemStringTextField.swift; sourceTree = "<group>"; };
 		B330A6331E2F2DDB0041672A /* RLM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RLM.swift; sourceTree = "<group>"; };
 		B33424F01E2F135700793CFC /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
@@ -61,18 +69,54 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B303146D1E30476300E13EBE /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				B303146B1E30474C00E13EBE /* CapturedNotesCoordinator.swift */,
+				B3EF6D141E2F3F9300EE961E /* ItemsCoordinator.swift */,
+				B3EF6D181E2F3F9F00EE961E /* ItemCoordinator.swift */,
+				B33424F01E2F135700793CFC /* MainCoordinator.swift */,
+				B30314711E3047AC00E13EBE /* CaptureCoordinator.swift */,
+			);
+			name = Coordinators;
+			sourceTree = "<group>";
+		};
+		B303146E1E30477400E13EBE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B330A6331E2F2DDB0041672A /* RLM.swift */,
+				B3E3A80D1E2F0E17009CE4A5 /* Item.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		B303146F1E30477C00E13EBE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B30314731E3047E500E13EBE /* CaptureVC.swift */,
+				B3EF6D161E2F3F9900EE961E /* ItemsTVC.swift */,
+				B30314691E30471500E13EBE /* CapturedNotesTVC.swift */,
+				B3EF6D1A1E2F401100EE961E /* ItemVC.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		B30314701E30478300E13EBE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B30E40F31E2F509400C133E2 /* ItemStringTextField.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		B337E6AC1E2ECE18000ED519 = {
 			isa = PBXGroup;
 			children = (
 				B337E6B81E2ECE18000ED519 /* AppDelegate.swift */,
-				B3E3A80D1E2F0E17009CE4A5 /* Item.swift */,
-				B3EF6D141E2F3F9300EE961E /* ItemsCoordinator.swift */,
-				B3EF6D161E2F3F9900EE961E /* ItemsTVC.swift */,
-				B3EF6D181E2F3F9F00EE961E /* ItemCoordinator.swift */,
-				B330A6331E2F2DDB0041672A /* RLM.swift */,
-				B33424F01E2F135700793CFC /* MainCoordinator.swift */,
-				B3EF6D1A1E2F401100EE961E /* ItemVC.swift */,
-				B30E40F31E2F509400C133E2 /* ItemStringTextField.swift */,
+				B303146D1E30476300E13EBE /* Coordinators */,
+				B303146F1E30477C00E13EBE /* Controllers */,
+				B303146E1E30477400E13EBE /* Model */,
+				B30314701E30478300E13EBE /* View */,
 				B337E6B71E2ECE18000ED519 /* other */,
 				B337E6B61E2ECE18000ED519 /* Products */,
 				A546A709D0237D86D0B8C39C /* Pods */,
@@ -233,9 +277,13 @@
 				B3E3A80E1E2F0E17009CE4A5 /* Item.swift in Sources */,
 				B33424F11E2F135700793CFC /* MainCoordinator.swift in Sources */,
 				B3EF6D191E2F3F9F00EE961E /* ItemCoordinator.swift in Sources */,
+				B30314741E3047E500E13EBE /* CaptureVC.swift in Sources */,
+				B303146A1E30471500E13EBE /* CapturedNotesTVC.swift in Sources */,
 				B3EF6D171E2F3F9900EE961E /* ItemsTVC.swift in Sources */,
 				B3EF6D1B1E2F401100EE961E /* ItemVC.swift in Sources */,
 				B337E6B91E2ECE18000ED519 /* AppDelegate.swift in Sources */,
+				B30314721E3047AC00E13EBE /* CaptureCoordinator.swift in Sources */,
+				B303146C1E30474C00E13EBE /* CapturedNotesCoordinator.swift in Sources */,
 				B330A6341E2F2DDB0041672A /* RLM.swift in Sources */,
 				B3EF6D151E2F3F9300EE961E /* ItemsCoordinator.swift in Sources */,
 				B30E40F41E2F509400C133E2 /* ItemStringTextField.swift in Sources */,
