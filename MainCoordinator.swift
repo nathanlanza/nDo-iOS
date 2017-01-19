@@ -11,7 +11,7 @@ class MainCoordinator: TabBarCoordinator {
     override func viewControllerDidLoad() {
         super.viewControllerDidLoad()
         
-        let ic = ItemCoordinator()
+        let ic = ItemsCoordinator()
         let icNav = NavigationCoordinator(rootCoordinator: ic)
         icNav.tabBarItem.title = "Items"
         icNav.tabBarItem.image = #imageLiteral(resourceName: "routine")
@@ -21,12 +21,60 @@ class MainCoordinator: TabBarCoordinator {
         ccNav.tabBarItem.image = #imageLiteral(resourceName: "newWorkout")
         ccNav.tabBarItem.title = "Capture"
         
+        let cnc = CapturedNotesCoordinator()
+        let cncNav = NavigationCoordinator(rootCoordinator: cnc)
+        cncNav.tabBarItem.image = #imageLiteral(resourceName: "workout")
+        cncNav.tabBarItem.title = "Captured Notes"
+        
         coordinators = [icNav]
         
         addButton(for: ccNav, at: 1)
     }
+}
+
+class CapturedNotesCoordinator: Coordinator {
+    let capturedNotesTVC = CapturedNotesTVC()
+    override func loadViewController() {
+        viewController = capturedNotesTVC
+    }
+}
+
+class CapturedNotesTVC: UIViewController {
+    
+    let tableView = UITableView()
+    override func loadView() {
+        view = tableView
+    }
+    
+    var capturedNotes: Results<CapturedNote>! {
+        didSet {
+            variable.value = Array(capturedNotes)
+        }
+    }
+    let variable = Variable([CapturedNote]())
     
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        capturedNotes = RLM.objects(CapturedNote.self)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupTableView()
+    }
+    
+    func setupTableView() {
+  
+        tableView.register(UITableViewCell.self)
+        variable.asObservable().bindTo(tableView.rx.items(cellIdentifier: UITableViewCell.reuseIdentifier, cellType: UITableViewCell.self)) { index, value, cell in
+            cell.textLabel?.text = value.note
+        }.addDisposableTo(db)
+        
+    }
+   
+    let db = DisposeBag()
 }
 
 class CaptureCoordinator: Coordinator {
@@ -38,7 +86,7 @@ class CaptureCoordinator: Coordinator {
 
 
 class CaptureVC: UIViewController {
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
