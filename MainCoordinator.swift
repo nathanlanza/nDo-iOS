@@ -10,11 +10,6 @@ class MainCoordinator: TabBarCoordinator {
     override func viewControllerDidLoad() {
         super.viewControllerDidLoad()
         
-        let ic = ItemsCoordinator()
-        let icNav = NavigationCoordinator(rootCoordinator: ic)
-        icNav.tabBarItem.title = "Items"
-        icNav.tabBarItem.image = #imageLiteral(resourceName: "routine")
-        
         let cc = CaptureCoordinator()
         let ccNav = NavigationCoordinator(rootCoordinator: cc)
         ccNav.tabBarItem.image = #imageLiteral(resourceName: "newWorkout")
@@ -23,11 +18,19 @@ class MainCoordinator: TabBarCoordinator {
         let cnc = CapturedNotesCoordinator()
         let cncNav = NavigationCoordinator(rootCoordinator: cnc)
         cncNav.tabBarItem.image = #imageLiteral(resourceName: "workout")
-        cncNav.tabBarItem.title = "Captured Notes"
+        cncNav.tabBarItem.title = "In"
+       
+        let ic = ItemsCoordinator()
+        let icNav = NavigationCoordinator(rootCoordinator: ic)
+        icNav.tabBarItem.title = "Next Actions"
+        icNav.tabBarItem.image = #imageLiteral(resourceName: "routine")
         
-        coordinators = [icNav, cncNav]
         
-        addButton(for: ccNav, at: 1)
+        
+        
+        coordinators = [cncNav, icNav]
+        addButton(for: ccNav, at: 0)
+        colorButtons(colorsAndIndices: [(#colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1),0)])
     }
 }
 
