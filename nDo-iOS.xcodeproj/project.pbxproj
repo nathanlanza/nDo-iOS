@@ -12,6 +12,7 @@
 		B303146C1E30474C00E13EBE /* CapturedNotesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B303146B1E30474C00E13EBE /* CapturedNotesCoordinator.swift */; };
 		B30314721E3047AC00E13EBE /* CaptureCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30314711E3047AC00E13EBE /* CaptureCoordinator.swift */; };
 		B30314741E3047E500E13EBE /* CaptureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30314731E3047E500E13EBE /* CaptureVC.swift */; };
+		B30314781E30483600E13EBE /* CapturedNoteCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30314771E30483600E13EBE /* CapturedNoteCoordinator.swift */; };
 		B30E40F41E2F509400C133E2 /* ItemStringTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E40F31E2F509400C133E2 /* ItemStringTextField.swift */; };
 		B330A6341E2F2DDB0041672A /* RLM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B330A6331E2F2DDB0041672A /* RLM.swift */; };
 		B33424F11E2F135700793CFC /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33424F01E2F135700793CFC /* MainCoordinator.swift */; };
@@ -32,6 +33,7 @@
 		B303146B1E30474C00E13EBE /* CapturedNotesCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapturedNotesCoordinator.swift; sourceTree = "<group>"; };
 		B30314711E3047AC00E13EBE /* CaptureCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureCoordinator.swift; sourceTree = "<group>"; };
 		B30314731E3047E500E13EBE /* CaptureVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureVC.swift; sourceTree = "<group>"; };
+		B30314771E30483600E13EBE /* CapturedNoteCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapturedNoteCoordinator.swift; sourceTree = "<group>"; };
 		B30E40F31E2F509400C133E2 /* ItemStringTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemStringTextField.swift; sourceTree = "<group>"; };
 		B330A6331E2F2DDB0041672A /* RLM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RLM.swift; sourceTree = "<group>"; };
 		B33424F01E2F135700793CFC /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
@@ -72,11 +74,9 @@
 		B303146D1E30476300E13EBE /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
-				B303146B1E30474C00E13EBE /* CapturedNotesCoordinator.swift */,
-				B3EF6D141E2F3F9300EE961E /* ItemsCoordinator.swift */,
-				B3EF6D181E2F3F9F00EE961E /* ItemCoordinator.swift */,
 				B33424F01E2F135700793CFC /* MainCoordinator.swift */,
-				B30314711E3047AC00E13EBE /* CaptureCoordinator.swift */,
+				B30314751E30482300E13EBE /* Items */,
+				B30314761E30482800E13EBE /* CapturedNotes */,
 			);
 			name = Coordinators;
 			sourceTree = "<group>";
@@ -93,10 +93,10 @@
 		B303146F1E30477C00E13EBE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B30314731E3047E500E13EBE /* CaptureVC.swift */,
 				B3EF6D161E2F3F9900EE961E /* ItemsTVC.swift */,
-				B30314691E30471500E13EBE /* CapturedNotesTVC.swift */,
 				B3EF6D1A1E2F401100EE961E /* ItemVC.swift */,
+				B30314691E30471500E13EBE /* CapturedNotesTVC.swift */,
+				B30314731E3047E500E13EBE /* CaptureVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -107,6 +107,25 @@
 				B30E40F31E2F509400C133E2 /* ItemStringTextField.swift */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		B30314751E30482300E13EBE /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				B3EF6D141E2F3F9300EE961E /* ItemsCoordinator.swift */,
+				B3EF6D181E2F3F9F00EE961E /* ItemCoordinator.swift */,
+			);
+			name = Items;
+			sourceTree = "<group>";
+		};
+		B30314761E30482800E13EBE /* CapturedNotes */ = {
+			isa = PBXGroup;
+			children = (
+				B303146B1E30474C00E13EBE /* CapturedNotesCoordinator.swift */,
+				B30314711E3047AC00E13EBE /* CaptureCoordinator.swift */,
+				B30314771E30483600E13EBE /* CapturedNoteCoordinator.swift */,
+			);
+			name = CapturedNotes;
 			sourceTree = "<group>";
 		};
 		B337E6AC1E2ECE18000ED519 = {
@@ -278,6 +297,7 @@
 				B33424F11E2F135700793CFC /* MainCoordinator.swift in Sources */,
 				B3EF6D191E2F3F9F00EE961E /* ItemCoordinator.swift in Sources */,
 				B30314741E3047E500E13EBE /* CaptureVC.swift in Sources */,
+				B30314781E30483600E13EBE /* CapturedNoteCoordinator.swift in Sources */,
 				B303146A1E30471500E13EBE /* CapturedNotesTVC.swift in Sources */,
 				B3EF6D171E2F3F9900EE961E /* ItemsTVC.swift in Sources */,
 				B3EF6D1B1E2F401100EE961E /* ItemVC.swift in Sources */,

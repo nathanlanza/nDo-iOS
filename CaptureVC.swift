@@ -4,15 +4,39 @@ import RxCocoa
 
 class CaptureVC: UIViewController {
     
+    let capturedNote: CapturedNote?
+    
+    init(capturedNote: CapturedNote? = nil) {
+        
+        self.capturedNote = capturedNote
+        super.init(nibName: nil, bundle: nil)
+        
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         
-        setupNavigationItems()
         setupViews()
+        setupNavigationItems()
+        setupRx()
+    }
+    
+    func setupRx() {
+        guard let note = capturedNote else { return }
+        noteTextField.text = note.note
+        noteTextField.rx.controlEvent(.editingDidEnd).subscribe(onNext: {
+            note.note = self.noteTextField.text ?? ""
+        }).addDisposableTo(db)
+        //MARK: - Do url text field too
     }
     
     func setupNavigationItems() {
+        guard capturedNote == nil else { return }
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: nil, action: nil)
         navigationItem.leftBarButtonItem!.rx.tap.subscribe(onNext: {
             self.dismiss(animated: true, completion: nil)
