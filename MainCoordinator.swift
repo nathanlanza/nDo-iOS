@@ -11,9 +11,8 @@ class MainCoordinator: TabBarCoordinator {
         super.viewControllerDidLoad()
         
         let cc = CaptureCoordinator()
-        let ccNav = NavigationCoordinator(rootCoordinator: cc)
-        ccNav.tabBarItem.image = #imageLiteral(resourceName: "newWorkout")
-        ccNav.tabBarItem.title = "Capture"
+        cc.tabBarItem.title = "Capture"
+        cc.tabBarItem.image = #imageLiteral(resourceName: "newWorkout")
         
         let cnc = CapturedNotesCoordinator()
         let cncNav = NavigationCoordinator(rootCoordinator: cnc)
@@ -25,11 +24,8 @@ class MainCoordinator: TabBarCoordinator {
         icNav.tabBarItem.title = "Next Actions"
         icNav.tabBarItem.image = #imageLiteral(resourceName: "routine")
         
-        
-        
-        
         coordinators = [cncNav, icNav]
-        addButton(for: ccNav, at: 0)
+        addButton(for: cc, at: 0)
         colorButtons(colorsAndIndices: [(#colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1),0)])
     }
 }

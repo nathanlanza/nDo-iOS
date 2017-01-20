@@ -3,18 +3,13 @@ import RxSwift
 import RxCocoa
 
 class CaptureVC: UIViewController {
+    required init?(coder aDecoder: NSCoder) { fatalError() }
     
-    let capturedNote: CapturedNote?
+    var capturedNote: CapturedNote?
     
     init(capturedNote: CapturedNote? = nil) {
-        
         self.capturedNote = capturedNote
         super.init(nibName: nil, bundle: nil)
-        
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
