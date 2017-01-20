@@ -1,17 +1,17 @@
 import UIKit
 import CoordinatorKit
 
-class CapturedNoteCoordinator: Coordinator {
+class ItemCoordinator: Coordinator {
     var captureVC: CaptureVC { return viewController as! CaptureVC }
 
-    init(capturedNote: CapturedNote) {
-        self.capturedNote = capturedNote
+    init(item: Item) {
+        self.item = item
         super.init()
     }
     
-    let capturedNote: CapturedNote
+    let item: Item
     
     override func loadViewController() {
-        viewController = CaptureVC(capturedNote: capturedNote)
+        viewController = CaptureVC(item: item)
     }
 }

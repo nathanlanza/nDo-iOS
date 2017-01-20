@@ -3,31 +3,31 @@ import RxSwift
 import RxCocoa
 import RealmSwift
 
-protocol CapturedNotesTVCDelegate: class {
-    func capturedNotesTVC(_ capturedNotesTVC: CapturedNotesTVC, didSelectCapturedNote note: CapturedNote)
+protocol InTVCDelegate: class {
+    func inTVC(_ inTVC: InTVC, didSelectIn note: Item)
 }
 
-class CapturedNotesTVC: UIViewController {
+class InTVC: UIViewController {
     
-    weak var delegate: CapturedNotesTVCDelegate!
+    weak var delegate: InTVCDelegate!
     
     let tableView = UITableView()
     override func loadView() {
         view = tableView
     }
     
-    var capturedNotes: Results<CapturedNote>! {
+    var items: Results<Item>! {
         didSet {
-            variable.value = Array(capturedNotes)
+            variable.value = Array(items)
         }
     }
-    let variable = Variable([CapturedNote]())
+    let variable = Variable([Item]())
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        capturedNotes = RLM.objects(CapturedNote.self)
+        items = RLM.objects(Item.self)
     }
     
     override func viewDidLoad() {
@@ -42,8 +42,8 @@ class CapturedNotesTVC: UIViewController {
             cell.textLabel?.text = value.note
             }.addDisposableTo(db)
         
-        tableView.rx.modelSelected(CapturedNote.self).subscribe(onNext: { capturedNote in
-            self.delegate.capturedNotesTVC(self, didSelectCapturedNote: capturedNote)
+        tableView.rx.modelSelected(Item.self).subscribe(onNext: { capturedNote in
+            self.delegate.inTVC(self, didSelectItem: capturedNote)
         }).addDisposableTo(db)
         
         tableView.rx.itemDeleted.subscribe(onNext: { indexPath in

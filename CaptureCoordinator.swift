@@ -10,7 +10,7 @@ class CaptureCoordinator: Coordinator {
 
 extension CaptureCoordinator: TabBarButtonCoordinator {
     func prepareForReuse() {
-        captureVC.capturedNote = nil
+        captureVC.item = nil
         captureVC.noteTextField.text = nil
         captureVC.noteTextField.placeholder = "Capture note here."
         captureVC.urlTextField.text = nil

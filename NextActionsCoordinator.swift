@@ -1,15 +1,15 @@
 import CoordinatorKit
 import UIKit
 
-class ItemsCoordinator: Coordinator {
-    var itemsTVC: ItemsTVC { return viewController as! ItemsTVC }
+class NextActionsCoordinator: Coordinator {
+    var nextActionsTVC: NextActionsTVC { return viewController as! NextActionsTVC }
     override func loadViewController() {
-        viewController = ItemsTVC()
-        itemsTVC.delegate = self
+        viewController = NextActionsTVC()
+        nextActionsTVC.delegate = self
     }
 }
 
-extension ItemsCoordinator: ItemsTVCDelegate {
+extension NextActionsCoordinator: NextActionsTVCDelegate {
     func itemsTVC(_ itemsTVC: ItemsTVC, didSelectItem item: Item) {
         showItemCoordinator(item)
     }

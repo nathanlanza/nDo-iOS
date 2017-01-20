@@ -1,18 +1,18 @@
 import CoordinatorKit
 import UIKit
 
-class CapturedNotesCoordinator: Coordinator {
-    let capturedNotesTVC = CapturedNotesTVC()
+class InCoordinator: Coordinator {
+    let inTVC = InTVC()
     override func loadViewController() {
-        viewController = capturedNotesTVC
-        capturedNotesTVC.delegate = self
+        viewController = inTVC
+        inTVC.delegate = self
     }
 }
 
 
-extension CapturedNotesCoordinator: CapturedNotesTVCDelegate {
-    func capturedNotesTVC(_ capturedNotesTVC: CapturedNotesTVC, didSelectCapturedNote capturedNote: CapturedNote) {
-        let cnc = CapturedNoteCoordinator(capturedNote: capturedNote)
-        show(cnc, sender: self)
+extension InCoordinator: InTVCDelegate {
+    func inTVC(_ inTVC: InTVC, didSelectItem item: Item) {
+        let ic = ItemCoordinator(item: item)
+        show(ic, sender: self)
     }
 }

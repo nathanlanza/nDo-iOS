@@ -14,17 +14,29 @@ class MainCoordinator: TabBarCoordinator {
         cc.tabBarItem.title = "Capture"
         cc.tabBarItem.image = #imageLiteral(resourceName: "newWorkout")
         
-        let cnc = CapturedNotesCoordinator()
+        let cnc = InCoordinator()
         let cncNav = NavigationCoordinator(rootCoordinator: cnc)
         cncNav.tabBarItem.image = #imageLiteral(resourceName: "workout")
         cncNav.tabBarItem.title = "In"
        
-        let ic = ItemsCoordinator()
-        let icNav = NavigationCoordinator(rootCoordinator: ic)
-        icNav.tabBarItem.title = "Next Actions"
-        icNav.tabBarItem.image = #imageLiteral(resourceName: "routine")
+        let nac = NextActionsCoordinator()
+        let nacNav = NavigationCoordinator(rootCoordinator: nac)
+        nacNav.tabBarItem.title = "Next Actions"
+        nacNav.tabBarItem.image = #imageLiteral(resourceName: "routine")
         
-        coordinators = [cncNav, icNav]
+        let wfc = Coordinator() //waitingfor
+        wfc.tabBarItem.title = "Waiting For"
+        wfc.tabBarItem.image = #imageLiteral(resourceName: "workout")
+        
+        let pc = Coordinator()
+        pc.tabBarItem.title = "Projects"
+        pc.tabBarItem.image = #imageLiteral(resourceName: "statistics")
+        
+        let sdmc = Coordinator()
+        sdmc.tabBarItem.title = "Someday/Maybe"
+        sdmc.tabBarItem.image = #imageLiteral(resourceName: "settings")
+        
+        coordinators = [cncNav, nacNav, wfc, pc, sdmc]
         addButton(for: cc, at: 0)
         colorButtons(colorsAndIndices: [(#colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1),0)])
     }

@@ -5,10 +5,10 @@ import RxCocoa
 class CaptureVC: UIViewController {
     required init?(coder aDecoder: NSCoder) { fatalError() }
     
-    var capturedNote: CapturedNote?
+    var item: Item?
     
-    init(capturedNote: CapturedNote? = nil) {
-        self.capturedNote = capturedNote
+    init(item: Item? = nil) {
+        self.item = item
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -22,7 +22,7 @@ class CaptureVC: UIViewController {
     }
     
     func setupRx() {
-        guard let note = capturedNote else { return }
+        guard let note = item else { return }
         noteTextField.text = note.note
         noteTextField.rx.controlEvent(.editingDidEnd).subscribe(onNext: {
             note.note = self.noteTextField.text ?? ""
@@ -31,7 +31,7 @@ class CaptureVC: UIViewController {
     }
     
     func setupNavigationItems() {
-        guard capturedNote == nil else { return }
+        guard item == nil else { return }
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: nil, action: nil)
         navigationItem.leftBarButtonItem!.rx.tap.subscribe(onNext: {
             self.dismiss(animated: true, completion: nil)
@@ -39,14 +39,14 @@ class CaptureVC: UIViewController {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: nil)
         navigationItem.rightBarButtonItem!.rx.tap.subscribe(onNext: {
-            self.saveCapturedNote()
+            self.saveItem()
             self.dismiss(animated: true, completion: nil)
         }).addDisposableTo(db)
     }
     
-    func saveCapturedNote() {
+    func saveItem() {
         guard let text = noteTextField.text, text.characters.count > 0 else { return }
-        let note = CapturedNote.create()
+        let note = Item.create()
         RLM.write {
             note.note = text
         }

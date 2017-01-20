@@ -3,14 +3,14 @@ import RxSwift
 import RxCocoa
 import RealmSwift
 
-protocol ItemsTVCDelegate: class {
-    func itemsTVC(_ itemsTVC: ItemsTVC, didSelectItem item: Item)
-    func newItemTapped(for itemsTVC: ItemsTVC)
+protocol NextActionsTVCDelegate: class {
+    func nextActionsTVC(_ nextActionsTVC: NextActionsTVC, didSelectItem item: Item)
+    func newItemTapped(for itemsTVC: NextActionsTVC)
 }
 
-class ItemsTVC: UIViewController {
+class NextActionsTVC: UIViewController {
     
-    weak var delegate: ItemsTVCDelegate!
+    weak var delegate: NextActionsTVCDelegate!
     
     var items: Results<Item>! {
         didSet {
@@ -40,7 +40,7 @@ class ItemsTVC: UIViewController {
             }.addDisposableTo(db)
         
         tableView.rx.modelSelected(Item.self).subscribe(onNext: { item in
-            self.delegate.itemsTVC(self, didSelectItem: item)
+            self.delegate.nextActionsTVC(self, didSelectItem: item)
         }).addDisposableTo(db)
         
         tableView.rx.itemDeleted.subscribe(onNext: { indexPath in
