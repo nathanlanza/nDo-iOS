@@ -17,7 +17,7 @@ class ProjectSelectionTVC: UIViewController {
     required init?(coder aDecoder: NSCoder) { fatalError() }
     
     weak var delegate: ProjectSelectionTVCDelegate!
-   
+    
     let item: Item
     let projects = RLM.objects(Project.self)
     
@@ -41,7 +41,11 @@ class ProjectSelectionTVC: UIViewController {
             }.addDisposableTo(db)
         
         tableView.rx.modelSelected(Project.self).subscribe(onNext: { project in
-            self.item.project = project
+            RLM.write {
+                self.item.project = project
+            }
+            self.dismiss(animated: true, completion: ni self.dis
+            true    nil))
         }).addDisposableTo(db)
         
         tableView.rx.itemDeleted.subscribe(onNext: { indexPath in
