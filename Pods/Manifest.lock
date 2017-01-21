@@ -10,6 +10,15 @@ PODS:
   - Reuse (0.0.1)
   - RxCocoa (3.0.0):
     - RxSwift (~> 3.0)
+  - RxDataSources (1.0.2):
+    - RxCocoa (~> 3.0)
+    - RxSwift (~> 3.0)
+  - RxGesture (0.2.1):
+    - RxCocoa (~> 3.0)
+    - RxSwift (~> 3.0)
+  - RxKeyboard (0.4.0):
+    - RxCocoa (>= 3.0)
+    - RxSwift (>= 3.0)
   - RxRealm (0.4.0):
     - RealmSwift (~> 2.0)
     - RxSwift (~> 3.0.0)
@@ -22,6 +31,9 @@ DEPENDENCIES:
   - RealmSwift
   - Reuse (from `~/Documents/Reuse`)
   - RxCocoa (= 3.0)
+  - RxDataSources
+  - RxGesture
+  - RxKeyboard
   - RxRealm
   - RxSwift (= 3.0)
 
@@ -41,9 +53,12 @@ SPEC CHECKSUMS:
   RealmSwift: a4fa52d06e946a32ec746b3388374f742e6b8731
   Reuse: a02b2321a6636ef6622a2f095456957bbd29b94b
   RxCocoa: 0a2f3ae381cf16f4021a4cee7a4420f83058a965
+  RxDataSources: 1de77880bf5b7fcee42102adcd5a5d65e5b81541
+  RxGesture: 26b8dbfce16f0cf6594e41a4b39d6180cad4cf3c
+  RxKeyboard: ff2813c9b6c42e06a888864d84b4c36b8d9b3c31
   RxRealm: 6c1052b72118ed6929115801c38f90f0c962f2cf
   RxSwift: a930cd662f5b4a7ca9dc3518585dba91dadf497c
 
-PODFILE CHECKSUM: 3c2e8910f87d1564347aa73d734aa950bdaeb226
+PODFILE CHECKSUM: bdd4681386b18dfe2102e387d42df48829107c84
 
 COCOAPODS: 1.1.1

@@ -59,7 +59,11 @@ class Item: Object {
     dynamic var itemTypeInt: Int = 0
     var itemType: ItemType {
         get { return ItemType(int: itemTypeInt) }
-        set { itemTypeInt = newValue.int }
+        set {
+            RLM.write {
+                itemTypeInt = newValue.int
+            }
+        }
     }
     
     dynamic var detail = ""

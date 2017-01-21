@@ -24,7 +24,7 @@ class MainCoordinator: TabBarCoordinator {
         nacNav.tabBarItem.title = "Next Actions"
         nacNav.tabBarItem.image = #imageLiteral(resourceName: "routine")
         
-        let wfc = Coordinator() //waitingfor
+        let wfc = WaitingForCoordinator() 
         wfc.tabBarItem.title = "Waiting For"
         wfc.tabBarItem.image = #imageLiteral(resourceName: "workout")
         
@@ -32,11 +32,16 @@ class MainCoordinator: TabBarCoordinator {
         pc.tabBarItem.title = "Projects"
         pc.tabBarItem.image = #imageLiteral(resourceName: "statistics")
         
-        let sdmc = Coordinator()
+        let sdmc = SomedayMaybeCoordinator()
         sdmc.tabBarItem.title = "Someday/Maybe"
         sdmc.tabBarItem.image = #imageLiteral(resourceName: "settings")
         
-        coordinators = [cncNav, nacNav, wfc, pc, sdmc]
+        let rc = ReferenceCoordinator()
+        rc.tabBarItem.title = "Reference"
+        rc.tabBarItem.image = #imageLiteral(resourceName: "settings")
+        
+        
+        coordinators = [cncNav, nacNav, wfc, pc, sdmc, rc]
         addButton(for: cc, at: 0)
         colorButtons(colorsAndIndices: [(#colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1),0)])
     }

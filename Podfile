@@ -9,6 +9,9 @@ target 'nDo-iOS' do
   pod 'RxRealm'
   pod 'RxSwift', '3.0'
   pod 'RxCocoa', '3.0'
+  pod 'RxDataSources'
+  pod 'RxGesture'
+  pod 'RxKeyboard'
 
   pod 'CoordinatorKit', :path => '~/Documents/CoordinatorKit', :branch => 'master'
   pod 'Reuse', :path => '~/Documents/Reuse', :branch => 'master'
