@@ -15,13 +15,18 @@ extension Reactive where Base: UITableView {
     }
 }
 
+protocol ItemVCDelegate: class {
+    func projectsSelected()
+}
+
 class ItemVC: UIViewController {
     required init?(coder aDecoder: NSCoder) { fatalError() }
-    
     init(item: Item) {
         self.item = item
         super.init(nibName: nil, bundle: nil)
     }
+    
+    weak var delegate: ItemVCDelegate!
     
     let item: Item
     
@@ -104,6 +109,12 @@ extension ItemVC: UITableViewDelegate {
         }
         tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
         return indexPath
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 1 {
+            delegate.projectsSelected()
+        }
     }
 }
 

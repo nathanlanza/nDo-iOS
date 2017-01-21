@@ -15,7 +15,7 @@ extension SomedayMaybeCoordinator: SomedayMaybeTVCDelegate {
     }
     
     
-    func showItemCoordinator(_ item: Item? = nil) {
+    func showItemCoordinator(_ item: Item) {
         let iic = ItemCoordinator(item: item)
         show(iic, sender: self)
     }
