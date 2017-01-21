@@ -1,63 +1,52 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import Reuse
+
+extension Reactive where Base: UITableView {
+    public func items<S: Sequence, Cell: UITableViewCell, O : ObservableType>
+        (cellType: Cell.Type = Cell.self)
+        -> (_ source: O)
+        -> (_ configureCell: @escaping (Int, S.Iterator.Element, Cell) -> Void)
+        -> Disposable
+    where O.E == S, Cell: ReusableView {
+        return items(cellIdentifier: cellType.reuseIdentifier, cellType: cellType)
+    }
+}
 
 class ItemVC: UIViewController {
     
-    var item: Item! {
-        didSet {
-            detailTextField.placeholder = item.detail
-            firstStepTextField.placeholder = item.firstStep
-            finishedConditionTextField.placeholder = item.finishedCondition
-        }
+    let tableView = UITableView(frame: .zero, style: .grouped)
+    override func loadView() {
+        view = tableView
     }
+    
+    init(item: Item) {
+        self.item = item
+        super.init(nibName: nil, bundle: nil)
+    }
+    required init?(coder aDecoder: NSCoder) { fatalError() }
+    
+    let item: Item
     
     let stackView = UIStackView(axis: .vertical, spacing: 8, distribution: .fillEqually)
     
-    let detailTextField = ItemPropertyTextField.create()
-    let firstStepTextField = ItemPropertyTextField.create()
-    let finishedConditionTextField = ItemPropertyTextField.create()
     
-    func setupViews() {
-        view.addSubview(stackView)
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        
-        [detailTextField,firstStepTextField,finishedConditionTextField].forEach {
-            stackView.addArrangedSubview($0)
-        }
-        
-        NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor),
-            stackView.bottomAnchor.constraint(equalTo: bottomLayoutGuide.topAnchor, constant: -260),
-            stackView.leftAnchor.constraint(equalTo: view.leftAnchor),
-            stackView.rightAnchor.constraint(equalTo: view.rightAnchor)
-            ])
+    func setupTableView() {
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .white
-        
-        setupViews()
-        setupRx()
-    }
     
-    func setupRx() {
-        detailTextField.rx.controlEvent(.editingDidEnd).subscribe(onNext: {
-            RLM.write {
-                self.item.detail = self.detailTextField.text ?? ""
-            }
-        }).addDisposableTo(db)
-        firstStepTextField.rx.controlEvent(.editingDidEnd).subscribe(onNext: {
-            RLM.write {
-                self.item.firstStep = self.firstStepTextField.text ?? ""
-            }
-        }).addDisposableTo(db)
-        finishedConditionTextField.rx.controlEvent(.editingDidEnd).subscribe(onNext: {
-            RLM.write {
-                self.item.finishedCondition = self.finishedConditionTextField.text ?? ""
-            }
-        }).addDisposableTo(db)
-    }
+    
     let db = DisposeBag()
 }
+
+struct Things {
+    var int: Int
+    var string: String
+}
+
+struct SectionOfThings {
+    var header: String
+    var items: [Item]
+}
+extension SectionOfThings: SectionModelType {

@@ -1,8 +1,8 @@
 import UIKit
 import CoordinatorKit
 
-class ItemCoordinator: Coordinator {
-    var captureVC: CaptureVC { return viewController as! CaptureVC }
+class CapturedItemCoordinator: Coordinator {
+    var itemVC: ItemVC { return viewController as! ItemVC }
 
     init(item: Item) {
         self.item = item
@@ -12,6 +12,6 @@ class ItemCoordinator: Coordinator {
     let item: Item
     
     override func loadViewController() {
-        viewController = CaptureVC(item: item)
+        viewController = CaptureVC()
     }
 }

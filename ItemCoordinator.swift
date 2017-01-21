@@ -10,9 +10,8 @@ class ItemCoordinator: Coordinator {
         super.init()
     }
     
-    let itemVC = ItemVC()
+    var itemVC: ItemVC { return viewController as! ItemVC }
     override func loadViewController() {
-        viewController = itemVC
-        itemVC.item = item
+        viewController = ItemVC(item: item)
     }
 }

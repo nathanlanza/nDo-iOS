@@ -2,9 +2,10 @@ import UIKit
 import RxSwift
 import RxCocoa
 import RealmSwift
+import RxRealm
 
 protocol InTVCDelegate: class {
-    func inTVC(_ inTVC: InTVC, didSelectIn note: Item)
+    func inTVC(_ inTVC: InTVC, didSelectItem item: Item)
 }
 
 class InTVC: UIViewController {
@@ -16,30 +17,19 @@ class InTVC: UIViewController {
         view = tableView
     }
     
-    var items: Results<Item>! {
-        didSet {
-            variable.value = Array(items)
-        }
-    }
-    let variable = Variable([Item]())
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        items = RLM.objects(Item.self)
-    }
+    var items: Results<Item>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        items = RLM.objects(Item.self).filter("itemTypeInt == 0")
         setupTableView()
     }
     
     func setupTableView() {
         
         tableView.register(UITableViewCell.self)
-        variable.asObservable().bindTo(tableView.rx.items(cellIdentifier: UITableViewCell.reuseIdentifier, cellType: UITableViewCell.self)) { index, value, cell in
-            cell.textLabel?.text = value.note
+        Observable.from(items).bindTo(tableView.rx.items(cellIdentifier: UITableViewCell.reuseIdentifier, cellType: UITableViewCell.self)) { index, value, cell in
+            cell.textLabel?.text = value.detail
             }.addDisposableTo(db)
         
         tableView.rx.modelSelected(Item.self).subscribe(onNext: { capturedNote in
@@ -47,10 +37,9 @@ class InTVC: UIViewController {
         }).addDisposableTo(db)
         
         tableView.rx.itemDeleted.subscribe(onNext: { indexPath in
-            let removed = self.variable.value.remove(at: indexPath.row)
+            let removed = self.items[indexPath.row]
             removed.delete()
         }).addDisposableTo(db)
-        
     }
     
     let db = DisposeBag()

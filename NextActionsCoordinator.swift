@@ -10,13 +10,10 @@ class NextActionsCoordinator: Coordinator {
 }
 
 extension NextActionsCoordinator: NextActionsTVCDelegate {
-    func itemsTVC(_ itemsTVC: ItemsTVC, didSelectItem item: Item) {
+    func nextActionsTVC(_ nextActionsTVC: NextActionsTVC, didSelectItem item: Item) {
         showItemCoordinator(item)
     }
     
-    func newItemTapped(for itemsTVC: ItemsTVC) {
-        showItemCoordinator()
-    }
     
     func showItemCoordinator(_ item: Item? = nil) {
         let iic = ItemCoordinator(item: item)
