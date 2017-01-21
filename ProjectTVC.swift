@@ -59,8 +59,8 @@ class ProjectsTVC: UIViewController {
             cell.detailTextLabel?.text = project.detail
             }.addDisposableTo(db)
         
-        tableView.rx.modelSelected(Item.self).subscribe(onNext: { item in
-            self.delegate.projectsTVC(self, didSelectItem: item)
+        tableView.rx.modelSelected(Project.self).subscribe(onNext: { project in
+            self.delegate.projectsTVC(self, didSelectProject: project)
         }).addDisposableTo(db)
         
         tableView.rx.itemDeleted.subscribe(onNext: { indexPath in
