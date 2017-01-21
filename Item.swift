@@ -4,7 +4,7 @@ class Project: Object {
    
     dynamic var title = ""
     dynamic var detail = ""
-    let actions = List<Item>()
+    let actions = LinkingObjects(fromType: Item.self, property: "project")
     
     static func create() -> Project {
         let project = Project()
@@ -73,6 +73,8 @@ class Item: Object {
     dynamic var waitCondition = ""
     dynamic var reminderDate = Date()
     dynamic var information = ""
+    
+    dynamic var project: Project?
     
     static func create() -> Item {
         let item = Item()

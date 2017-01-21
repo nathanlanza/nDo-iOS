@@ -17,6 +17,7 @@
 		B3195F8D1E334FBE008A82A3 /* SomedayMaybeTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3195F8C1E334FBE008A82A3 /* SomedayMaybeTVC.swift */; };
 		B3195F8F1E33FF3C008A82A3 /* ProjectTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3195F8E1E33FF3C008A82A3 /* ProjectTVC.swift */; };
 		B3195F911E340003008A82A3 /* ProjectsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3195F901E340003008A82A3 /* ProjectsCoordinator.swift */; };
+		B3195F9B1E341504008A82A3 /* ProjectSelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3195F9A1E341504008A82A3 /* ProjectSelectionVC.swift */; };
 		B330A6341E2F2DDB0041672A /* RLM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B330A6331E2F2DDB0041672A /* RLM.swift */; };
 		B33424F11E2F135700793CFC /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33424F01E2F135700793CFC /* MainCoordinator.swift */; };
 		B337E6B91E2ECE18000ED519 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B337E6B81E2ECE18000ED519 /* AppDelegate.swift */; };
@@ -46,6 +47,7 @@
 		B3195F8C1E334FBE008A82A3 /* SomedayMaybeTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SomedayMaybeTVC.swift; sourceTree = "<group>"; };
 		B3195F8E1E33FF3C008A82A3 /* ProjectTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectTVC.swift; sourceTree = "<group>"; };
 		B3195F901E340003008A82A3 /* ProjectsCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsCoordinator.swift; sourceTree = "<group>"; };
+		B3195F9A1E341504008A82A3 /* ProjectSelectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectSelectionVC.swift; sourceTree = "<group>"; };
 		B330A6331E2F2DDB0041672A /* RLM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RLM.swift; sourceTree = "<group>"; };
 		B33424F01E2F135700793CFC /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		B337E6B51E2ECE18000ED519 /* nDo-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "nDo-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,7 +112,7 @@
 		B303146F1E30477C00E13EBE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B3EF6D1A1E2F401100EE961E /* ItemVC.swift */,
+				B3195F991E341463008A82A3 /* ItemVCs */,
 				B30314731E3047E500E13EBE /* CaptureVC.swift */,
 				B30314691E30471500E13EBE /* InTVC.swift */,
 				B3EF6D161E2F3F9900EE961E /* NextActionsTVC.swift */,
@@ -150,6 +152,15 @@
 				B30314771E30483600E13EBE /* CapturedCoordinator.swift */,
 			);
 			name = NYI;
+			sourceTree = "<group>";
+		};
+		B3195F991E341463008A82A3 /* ItemVCs */ = {
+			isa = PBXGroup;
+			children = (
+				B3EF6D1A1E2F401100EE961E /* ItemVC.swift */,
+				B3195F9A1E341504008A82A3 /* ProjectSelectionVC.swift */,
+			);
+			name = ItemVCs;
 			sourceTree = "<group>";
 		};
 		B337E6AC1E2ECE18000ED519 = {
@@ -328,6 +339,7 @@
 				B347B1331E334DDA00C015E8 /* ReferenceTVC.swift in Sources */,
 				B30314741E3047E500E13EBE /* CaptureVC.swift in Sources */,
 				B30314781E30483600E13EBE /* CapturedCoordinator.swift in Sources */,
+				B3195F9B1E341504008A82A3 /* ProjectSelectionVC.swift in Sources */,
 				B303146A1E30471500E13EBE /* InTVC.swift in Sources */,
 				B3EF6D171E2F3F9900EE961E /* NextActionsTVC.swift in Sources */,
 				B3EF6D1B1E2F401100EE961E /* ItemVC.swift in Sources */,
