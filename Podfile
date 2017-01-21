@@ -5,9 +5,13 @@ target 'nDo-iOS' do
 
   pod 'DZNEmptyDataSet'
 
+  pod 'RealmSwift'
+  pod 'RxRealm'
   pod 'RxSwift', '3.0'
   pod 'RxCocoa', '3.0'
-  pod 'RealmSwift'
+  pod 'RxDataSources'
+  pod 'RxGesture'
+  pod 'RxKeyboard'
 
   pod 'CoordinatorKit', :path => '~/Documents/CoordinatorKit', :branch => 'master'
   pod 'Reuse', :path => '~/Documents/Reuse', :branch => 'master'

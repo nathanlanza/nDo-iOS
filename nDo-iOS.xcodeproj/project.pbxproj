@@ -8,15 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		436117C164E876BFFDB2E045 /* Pods_nDo_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91B5EBCF9F456EA8597FA37A /* Pods_nDo_iOS.framework */; };
+		B303146A1E30471500E13EBE /* InTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30314691E30471500E13EBE /* InTVC.swift */; };
+		B303146C1E30474C00E13EBE /* InCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B303146B1E30474C00E13EBE /* InCoordinator.swift */; };
+		B30314721E3047AC00E13EBE /* CaptureCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30314711E3047AC00E13EBE /* CaptureCoordinator.swift */; };
+		B30314741E3047E500E13EBE /* CaptureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30314731E3047E500E13EBE /* CaptureVC.swift */; };
+		B30314781E30483600E13EBE /* CapturedCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30314771E30483600E13EBE /* CapturedCoordinator.swift */; };
 		B30E40F41E2F509400C133E2 /* ItemStringTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E40F31E2F509400C133E2 /* ItemStringTextField.swift */; };
+		B3195F8D1E334FBE008A82A3 /* SomedayMaybeTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3195F8C1E334FBE008A82A3 /* SomedayMaybeTVC.swift */; };
+		B3195F8F1E33FF3C008A82A3 /* ProjectTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3195F8E1E33FF3C008A82A3 /* ProjectTVC.swift */; };
+		B3195F911E340003008A82A3 /* ProjectsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3195F901E340003008A82A3 /* ProjectsCoordinator.swift */; };
 		B330A6341E2F2DDB0041672A /* RLM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B330A6331E2F2DDB0041672A /* RLM.swift */; };
 		B33424F11E2F135700793CFC /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33424F01E2F135700793CFC /* MainCoordinator.swift */; };
 		B337E6B91E2ECE18000ED519 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B337E6B81E2ECE18000ED519 /* AppDelegate.swift */; };
 		B337E6C01E2ECE18000ED519 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B337E6BF1E2ECE18000ED519 /* Assets.xcassets */; };
 		B337E6C31E2ECE18000ED519 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B337E6C11E2ECE18000ED519 /* LaunchScreen.storyboard */; };
+		B347B12D1E334CE600C015E8 /* WaitingForTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B347B12C1E334CE600C015E8 /* WaitingForTVC.swift */; };
+		B347B12F1E334D6C00C015E8 /* WaitingForCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B347B12E1E334D6C00C015E8 /* WaitingForCoordinator.swift */; };
+		B347B1311E334D7300C015E8 /* ReferenceCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B347B1301E334D7300C015E8 /* ReferenceCoordinator.swift */; };
+		B347B1331E334DDA00C015E8 /* ReferenceTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B347B1321E334DDA00C015E8 /* ReferenceTVC.swift */; };
+		B347B1351E334E4500C015E8 /* SomedayMaybeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B347B1341E334E4400C015E8 /* SomedayMaybeCoordinator.swift */; };
 		B3E3A80E1E2F0E17009CE4A5 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E3A80D1E2F0E17009CE4A5 /* Item.swift */; };
-		B3EF6D151E2F3F9300EE961E /* ItemsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EF6D141E2F3F9300EE961E /* ItemsCoordinator.swift */; };
-		B3EF6D171E2F3F9900EE961E /* ItemsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EF6D161E2F3F9900EE961E /* ItemsTVC.swift */; };
+		B3EF6D151E2F3F9300EE961E /* NextActionsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EF6D141E2F3F9300EE961E /* NextActionsCoordinator.swift */; };
+		B3EF6D171E2F3F9900EE961E /* NextActionsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EF6D161E2F3F9900EE961E /* NextActionsTVC.swift */; };
 		B3EF6D191E2F3F9F00EE961E /* ItemCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EF6D181E2F3F9F00EE961E /* ItemCoordinator.swift */; };
 		B3EF6D1B1E2F401100EE961E /* ItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EF6D1A1E2F401100EE961E /* ItemVC.swift */; };
 /* End PBXBuildFile section */
@@ -24,7 +37,15 @@
 /* Begin PBXFileReference section */
 		5AAE119F8828845EA6C1C8BD /* Pods-nDo-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nDo-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nDo-iOS/Pods-nDo-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		91B5EBCF9F456EA8597FA37A /* Pods_nDo_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nDo_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B30314691E30471500E13EBE /* InTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InTVC.swift; sourceTree = "<group>"; };
+		B303146B1E30474C00E13EBE /* InCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InCoordinator.swift; sourceTree = "<group>"; };
+		B30314711E3047AC00E13EBE /* CaptureCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureCoordinator.swift; sourceTree = "<group>"; };
+		B30314731E3047E500E13EBE /* CaptureVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureVC.swift; sourceTree = "<group>"; };
+		B30314771E30483600E13EBE /* CapturedCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapturedCoordinator.swift; sourceTree = "<group>"; };
 		B30E40F31E2F509400C133E2 /* ItemStringTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemStringTextField.swift; sourceTree = "<group>"; };
+		B3195F8C1E334FBE008A82A3 /* SomedayMaybeTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SomedayMaybeTVC.swift; sourceTree = "<group>"; };
+		B3195F8E1E33FF3C008A82A3 /* ProjectTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectTVC.swift; sourceTree = "<group>"; };
+		B3195F901E340003008A82A3 /* ProjectsCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsCoordinator.swift; sourceTree = "<group>"; };
 		B330A6331E2F2DDB0041672A /* RLM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RLM.swift; sourceTree = "<group>"; };
 		B33424F01E2F135700793CFC /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		B337E6B51E2ECE18000ED519 /* nDo-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "nDo-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -32,9 +53,14 @@
 		B337E6BF1E2ECE18000ED519 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B337E6C21E2ECE18000ED519 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B337E6C41E2ECE18000ED519 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B347B12C1E334CE600C015E8 /* WaitingForTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaitingForTVC.swift; sourceTree = "<group>"; };
+		B347B12E1E334D6C00C015E8 /* WaitingForCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaitingForCoordinator.swift; sourceTree = "<group>"; };
+		B347B1301E334D7300C015E8 /* ReferenceCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReferenceCoordinator.swift; sourceTree = "<group>"; };
+		B347B1321E334DDA00C015E8 /* ReferenceTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReferenceTVC.swift; sourceTree = "<group>"; };
+		B347B1341E334E4400C015E8 /* SomedayMaybeCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SomedayMaybeCoordinator.swift; sourceTree = "<group>"; };
 		B3E3A80D1E2F0E17009CE4A5 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
-		B3EF6D141E2F3F9300EE961E /* ItemsCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsCoordinator.swift; sourceTree = "<group>"; };
-		B3EF6D161E2F3F9900EE961E /* ItemsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsTVC.swift; sourceTree = "<group>"; };
+		B3EF6D141E2F3F9300EE961E /* NextActionsCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextActionsCoordinator.swift; sourceTree = "<group>"; };
+		B3EF6D161E2F3F9900EE961E /* NextActionsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextActionsTVC.swift; sourceTree = "<group>"; };
 		B3EF6D181E2F3F9F00EE961E /* ItemCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCoordinator.swift; sourceTree = "<group>"; };
 		B3EF6D1A1E2F401100EE961E /* ItemVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemVC.swift; sourceTree = "<group>"; };
 		C1E6F59A33910D78237E7C53 /* Pods-nDo-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nDo-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-nDo-iOS/Pods-nDo-iOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -61,18 +87,79 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B303146D1E30476300E13EBE /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				B33424F01E2F135700793CFC /* MainCoordinator.swift */,
+				B3EF6D181E2F3F9F00EE961E /* ItemCoordinator.swift */,
+				B30314751E30482300E13EBE /* Lists */,
+				B30314761E30482800E13EBE /* NYI */,
+			);
+			name = Coordinators;
+			sourceTree = "<group>";
+		};
+		B303146E1E30477400E13EBE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B330A6331E2F2DDB0041672A /* RLM.swift */,
+				B3E3A80D1E2F0E17009CE4A5 /* Item.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		B303146F1E30477C00E13EBE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B3EF6D1A1E2F401100EE961E /* ItemVC.swift */,
+				B30314731E3047E500E13EBE /* CaptureVC.swift */,
+				B30314691E30471500E13EBE /* InTVC.swift */,
+				B3EF6D161E2F3F9900EE961E /* NextActionsTVC.swift */,
+				B347B12C1E334CE600C015E8 /* WaitingForTVC.swift */,
+				B347B1321E334DDA00C015E8 /* ReferenceTVC.swift */,
+				B3195F8C1E334FBE008A82A3 /* SomedayMaybeTVC.swift */,
+				B3195F8E1E33FF3C008A82A3 /* ProjectTVC.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		B30314701E30478300E13EBE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B30E40F31E2F509400C133E2 /* ItemStringTextField.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		B30314751E30482300E13EBE /* Lists */ = {
+			isa = PBXGroup;
+			children = (
+				B30314711E3047AC00E13EBE /* CaptureCoordinator.swift */,
+				B303146B1E30474C00E13EBE /* InCoordinator.swift */,
+				B3EF6D141E2F3F9300EE961E /* NextActionsCoordinator.swift */,
+				B347B12E1E334D6C00C015E8 /* WaitingForCoordinator.swift */,
+				B347B1341E334E4400C015E8 /* SomedayMaybeCoordinator.swift */,
+				B347B1301E334D7300C015E8 /* ReferenceCoordinator.swift */,
+				B3195F901E340003008A82A3 /* ProjectsCoordinator.swift */,
+			);
+			name = Lists;
+			sourceTree = "<group>";
+		};
+		B30314761E30482800E13EBE /* NYI */ = {
+			isa = PBXGroup;
+			children = (
+				B30314771E30483600E13EBE /* CapturedCoordinator.swift */,
+			);
+			name = NYI;
+			sourceTree = "<group>";
+		};
 		B337E6AC1E2ECE18000ED519 = {
 			isa = PBXGroup;
 			children = (
 				B337E6B81E2ECE18000ED519 /* AppDelegate.swift */,
-				B3E3A80D1E2F0E17009CE4A5 /* Item.swift */,
-				B3EF6D141E2F3F9300EE961E /* ItemsCoordinator.swift */,
-				B3EF6D161E2F3F9900EE961E /* ItemsTVC.swift */,
-				B3EF6D181E2F3F9F00EE961E /* ItemCoordinator.swift */,
-				B330A6331E2F2DDB0041672A /* RLM.swift */,
-				B33424F01E2F135700793CFC /* MainCoordinator.swift */,
-				B3EF6D1A1E2F401100EE961E /* ItemVC.swift */,
-				B30E40F31E2F509400C133E2 /* ItemStringTextField.swift */,
+				B303146D1E30476300E13EBE /* Coordinators */,
+				B303146F1E30477C00E13EBE /* Controllers */,
+				B303146E1E30477400E13EBE /* Model */,
+				B30314701E30478300E13EBE /* View */,
 				B337E6B71E2ECE18000ED519 /* other */,
 				B337E6B61E2ECE18000ED519 /* Products */,
 				A546A709D0237D86D0B8C39C /* Pods */,
@@ -230,15 +317,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3195F911E340003008A82A3 /* ProjectsCoordinator.swift in Sources */,
+				B347B1351E334E4500C015E8 /* SomedayMaybeCoordinator.swift in Sources */,
+				B3195F8F1E33FF3C008A82A3 /* ProjectTVC.swift in Sources */,
 				B3E3A80E1E2F0E17009CE4A5 /* Item.swift in Sources */,
 				B33424F11E2F135700793CFC /* MainCoordinator.swift in Sources */,
+				B347B12D1E334CE600C015E8 /* WaitingForTVC.swift in Sources */,
 				B3EF6D191E2F3F9F00EE961E /* ItemCoordinator.swift in Sources */,
-				B3EF6D171E2F3F9900EE961E /* ItemsTVC.swift in Sources */,
+				B347B12F1E334D6C00C015E8 /* WaitingForCoordinator.swift in Sources */,
+				B347B1331E334DDA00C015E8 /* ReferenceTVC.swift in Sources */,
+				B30314741E3047E500E13EBE /* CaptureVC.swift in Sources */,
+				B30314781E30483600E13EBE /* CapturedCoordinator.swift in Sources */,
+				B303146A1E30471500E13EBE /* InTVC.swift in Sources */,
+				B3EF6D171E2F3F9900EE961E /* NextActionsTVC.swift in Sources */,
 				B3EF6D1B1E2F401100EE961E /* ItemVC.swift in Sources */,
 				B337E6B91E2ECE18000ED519 /* AppDelegate.swift in Sources */,
+				B30314721E3047AC00E13EBE /* CaptureCoordinator.swift in Sources */,
+				B303146C1E30474C00E13EBE /* InCoordinator.swift in Sources */,
 				B330A6341E2F2DDB0041672A /* RLM.swift in Sources */,
-				B3EF6D151E2F3F9300EE961E /* ItemsCoordinator.swift in Sources */,
+				B3EF6D151E2F3F9300EE961E /* NextActionsCoordinator.swift in Sources */,
+				B3195F8D1E334FBE008A82A3 /* SomedayMaybeTVC.swift in Sources */,
 				B30E40F41E2F509400C133E2 /* ItemStringTextField.swift in Sources */,
+				B347B1311E334D7300C015E8 /* ReferenceCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
