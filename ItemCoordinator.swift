@@ -35,5 +35,15 @@ class ProjectSelectionCoordinator: Coordinator {
     var projectSelectionTVC: ProjectSelectionTVC { return viewController as! ProjectSelectionTVC }
     override func loadViewController() {
         viewController = ProjectSelectionTVC(item: item)
+        projectSelectionTVC.delegate = self
+    }
+}
+
+extension ProjectSelectionCoordinator: ProjectSelectionTVCDelegate {
+    func projectSelectionTVC(_ projectSelectionTVC: ProjectSelectionTVC, didSelectProject project: Project) {
+        //
+    }
+    func finishedSelection() {
+        navigationCoordinator?.popCoordinator(animated: true)
     }
 }

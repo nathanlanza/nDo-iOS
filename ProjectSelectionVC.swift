@@ -7,6 +7,7 @@ import Reuse
 
 protocol ProjectSelectionTVCDelegate: class {
     func projectSelectionTVC(_ projectSelectionTVC: ProjectSelectionTVC, didSelectProject project: Project)
+    func finishedSelection()
 }
 
 class ProjectSelectionTVC: UIViewController {
@@ -44,8 +45,7 @@ class ProjectSelectionTVC: UIViewController {
             RLM.write {
                 self.item.project = project
             }
-            self.dismiss(animated: true, completion: ni self.dis
-            true    nil))
+            self.delegate.finishedSelection()
         }).addDisposableTo(db)
         
         tableView.rx.itemDeleted.subscribe(onNext: { indexPath in
