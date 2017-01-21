@@ -22,7 +22,7 @@ class WaitingForTVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        items = RLM.objects(Item.self).filter("itemTypeInt == 1")
+        items = RLM.objects(Item.self).filter("itemTypeInt == 2")
         
         tableView.register(UITableViewCell.self)
         Observable.from(items).bindTo(tableView.rx.items(cellIdentifier: UITableViewCell.reuseIdentifier, cellType: UITableViewCell.self)) { index, item, cell in

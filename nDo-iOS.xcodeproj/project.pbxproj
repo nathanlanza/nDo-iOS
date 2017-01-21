@@ -14,6 +14,7 @@
 		B30314741E3047E500E13EBE /* CaptureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30314731E3047E500E13EBE /* CaptureVC.swift */; };
 		B30314781E30483600E13EBE /* CapturedCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30314771E30483600E13EBE /* CapturedCoordinator.swift */; };
 		B30E40F41E2F509400C133E2 /* ItemStringTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E40F31E2F509400C133E2 /* ItemStringTextField.swift */; };
+		B3195F8D1E334FBE008A82A3 /* SomedayMaybeTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3195F8C1E334FBE008A82A3 /* SomedayMaybeTVC.swift */; };
 		B330A6341E2F2DDB0041672A /* RLM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B330A6331E2F2DDB0041672A /* RLM.swift */; };
 		B33424F11E2F135700793CFC /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33424F01E2F135700793CFC /* MainCoordinator.swift */; };
 		B337E6B91E2ECE18000ED519 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B337E6B81E2ECE18000ED519 /* AppDelegate.swift */; };
@@ -40,6 +41,7 @@
 		B30314731E3047E500E13EBE /* CaptureVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureVC.swift; sourceTree = "<group>"; };
 		B30314771E30483600E13EBE /* CapturedCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapturedCoordinator.swift; sourceTree = "<group>"; };
 		B30E40F31E2F509400C133E2 /* ItemStringTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemStringTextField.swift; sourceTree = "<group>"; };
+		B3195F8C1E334FBE008A82A3 /* SomedayMaybeTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SomedayMaybeTVC.swift; sourceTree = "<group>"; };
 		B330A6331E2F2DDB0041672A /* RLM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RLM.swift; sourceTree = "<group>"; };
 		B33424F01E2F135700793CFC /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		B337E6B51E2ECE18000ED519 /* nDo-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "nDo-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,6 +112,7 @@
 				B3EF6D161E2F3F9900EE961E /* NextActionsTVC.swift */,
 				B347B12C1E334CE600C015E8 /* WaitingForTVC.swift */,
 				B347B1321E334DDA00C015E8 /* ReferenceTVC.swift */,
+				B3195F8C1E334FBE008A82A3 /* SomedayMaybeTVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				B303146C1E30474C00E13EBE /* InCoordinator.swift in Sources */,
 				B330A6341E2F2DDB0041672A /* RLM.swift in Sources */,
 				B3EF6D151E2F3F9300EE961E /* NextActionsCoordinator.swift in Sources */,
+				B3195F8D1E334FBE008A82A3 /* SomedayMaybeTVC.swift in Sources */,
 				B30E40F41E2F509400C133E2 /* ItemStringTextField.swift in Sources */,
 				B347B1311E334D7300C015E8 /* ReferenceCoordinator.swift in Sources */,
 			);

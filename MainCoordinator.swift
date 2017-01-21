@@ -24,24 +24,27 @@ class MainCoordinator: TabBarCoordinator {
         nacNav.tabBarItem.title = "Next Actions"
         nacNav.tabBarItem.image = #imageLiteral(resourceName: "routine")
         
-        let wfc = WaitingForCoordinator() 
-        wfc.tabBarItem.title = "Waiting For"
-        wfc.tabBarItem.image = #imageLiteral(resourceName: "workout")
+        let wfc = WaitingForCoordinator()
+        let wfcNav = NavigationCoordinator(rootCoordinator: wfc)
+        wfcNav.tabBarItem.title = "Waiting For"
+        wfcNav.tabBarItem.image = #imageLiteral(resourceName: "workout")
         
         let pc = Coordinator()
         pc.tabBarItem.title = "Projects"
         pc.tabBarItem.image = #imageLiteral(resourceName: "statistics")
         
         let sdmc = SomedayMaybeCoordinator()
-        sdmc.tabBarItem.title = "Someday/Maybe"
-        sdmc.tabBarItem.image = #imageLiteral(resourceName: "settings")
+        let sdmcNav = NavigationCoordinator(rootCoordinator: sdmc)
+        sdmcNav.tabBarItem.title = "Someday/Maybe"
+        sdmcNav.tabBarItem.image = #imageLiteral(resourceName: "settings")
         
         let rc = ReferenceCoordinator()
-        rc.tabBarItem.title = "Reference"
-        rc.tabBarItem.image = #imageLiteral(resourceName: "settings")
+        let rcNav = NavigationCoordinator(rootCoordinator: rc)
+        rcNav.tabBarItem.title = "Reference"
+        rcNav.tabBarItem.image = #imageLiteral(resourceName: "settings")
         
         
-        coordinators = [cncNav, nacNav, wfc, pc, sdmc, rc]
+        coordinators = [cncNav, nacNav, wfcNav, sdmcNav, rcNav]
         addButton(for: cc, at: 0)
         colorButtons(colorsAndIndices: [(#colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1),0)])
     }
