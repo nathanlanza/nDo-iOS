@@ -6,13 +6,13 @@ class Project: Object {
     dynamic var detail = ""
     let actions = List<Item>()
     
-    static func create() -> Item {
-        let item = Item()
+    static func create() -> Project {
+        let project = Project()
         
         RLM.write {
-            RLM.add(item)
+            RLM.add(project)
         }
-        return item
+        return project
     }
     func delete() {
         RLM.write {

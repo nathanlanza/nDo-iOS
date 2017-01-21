@@ -10,8 +10,8 @@ class ProjectsCoordinator: Coordinator {
 }
 
 extension ProjectsCoordinator: ProjectsTVCDelegate {
-    func projectsTVC(_ projectsTVC: ProjectsTVC, didSelectItem item: Item) {
-        showItemCoordinator(item)
+    func projectsTVC(_ projectsTVC: ProjectsTVC, didSelectProject project: Project) {
+        print("Can't do dis yet")
     }
     
     

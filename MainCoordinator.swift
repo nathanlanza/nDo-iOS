@@ -45,7 +45,7 @@ class MainCoordinator: TabBarCoordinator {
         pcNav.tabBarItem.title = "Projects"
         pcNav.tabBarItem.image = #imageLiteral(resourceName: "statistics")
         
-        coordinators = [cncNav, nacNav, wfcNav, sdmcNav, rcNav, pcNav]
+        coordinators = [cncNav, nacNav, pcNav, wfcNav, sdmcNav, rcNav,]
         addButton(for: cc, at: 0)
         colorButtons(colorsAndIndices: [(#colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1),0)])
     }

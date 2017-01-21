@@ -3,16 +3,17 @@ import RxSwift
 import RxCocoa
 import RealmSwift
 import RxRealm
+import Reuse
 
 protocol ProjectsTVCDelegate: class {
-    func projectsTVC(_ projectsTVC: ProjectsTVC, didSelectItem item: Item)
+    func projectsTVC(_ projectsTVC: ProjectsTVC, didSelectProject project: Project)
 }
 
 class ProjectsTVC: UIViewController {
     
     weak var delegate: ProjectsTVCDelegate!
     
-    var items: Results<Item>!
+    let projects = RLM.objects(Project.self)
     
     let tableView = UITableView()
     override func loadView() {
@@ -21,12 +22,41 @@ class ProjectsTVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        items = RLM.objects(Item.self).filter("itemTypeInt == 4")
-        
+      
+        setupNavBar()
+        setupTableView()
+    }
+    
+    func setupNavBar() {
+        let r = UIBarButtonItem(title: "New", style: .plain)
+        r.rx.tap.subscribe(onNext: {
+            self.presentAddProjectAlertController()
+        }).addDisposableTo(db)
+        navigationItem.rightBarButtonItem = r
+    }
+    
+    func presentAddProjectAlertController() {
+        let ac = UIAlertController(title: "Add New Project", message: "What should it be called?", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "Ok", style: .default) { _ in
+            let tf = ac.textFields!.first!
+            let project = Project.create()
+            RLM.write {
+                project.title = tf.text!
+            }
+        }
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+        ac.addAction(ok)
+        ac.addAction(cancel)
+        ac.addTextField(configurationHandler: nil)
+        present(ac, animated: true)
+    }
+    
+    
+    func setupTableView() {
         tableView.register(UITableViewCell.self)
-        Observable.from(items).bindTo(tableView.rx.items(cellIdentifier: UITableViewCell.reuseIdentifier, cellType: UITableViewCell.self)) { index, item, cell in
-            cell.textLabel?.text = item.detail
+        Observable.from(projects).bindTo(tableView.rx.items(cellIdentifier: UITableViewCell.reuseIdentifier, cellType: UITableViewCell.self)) { index, project, cell in
+            cell.textLabel?.text = project.title
+            cell.detailTextLabel?.text = project.detail
             }.addDisposableTo(db)
         
         tableView.rx.modelSelected(Item.self).subscribe(onNext: { item in
@@ -34,10 +64,12 @@ class ProjectsTVC: UIViewController {
         }).addDisposableTo(db)
         
         tableView.rx.itemDeleted.subscribe(onNext: { indexPath in
-            let removed = self.items[indexPath.row]
+            let removed = self.projects[indexPath.row]
             removed.delete()
         }).addDisposableTo(db)
     }
     
     let db = DisposeBag()
 }
+
+
