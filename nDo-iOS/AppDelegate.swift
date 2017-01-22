@@ -1,5 +1,6 @@
 import UIKit
 import CoordinatorKit
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -7,6 +8,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        
+        Realm.Configuration.defaultConfiguration = Realm.Configuration(schemaVersion: 1, migrationBlock: { migration, oldSchemaVersion in
+            if oldSchemaVersion < 1 {
+                //do nothing
+            }
+        })
         
         self.window = UIWindow()
         window?.rootCoordinator = MainCoordinator.main
